@@ -1,4 +1,5 @@
 module Main where
+import Data.Char
 
 main :: IO ()
 main = do
@@ -27,3 +28,18 @@ addMultiplyAndSubstract list1 list2 = map (\f -> zipWith f list1 list2) [(+), (*
 -- below example of what to run ghci
 -- addMultiplyAndSubstract [1..6] [1..6]
 -- [[2,4,6,8,10,12],[1,4,9,16,25,36],[0,0,0,0,0,0]]
+
+applyUntil condition fn value | condition value == True = value
+                 | otherwise   = applyUntil condition fn (fn value)
+
+
+
+greatestOddDivisor = applyUntil(\num -> mod num 2 == 1) (\num -> div num 2)
+-- below example of what to run ghci
+-- greatestOddDivisor 44  = 11
+
+smallestNaturalNumberThatIsUnicode p = applyUntil p (\num -> num + 1) 1
+-- below example of what to run ghci
+-- smallestNaturalNumberThatIsUnicode (\num -> isLetter(chr num))
+
+
