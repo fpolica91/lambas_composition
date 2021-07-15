@@ -21,3 +21,9 @@ addCToEveryItemInList = map (\item -> 'c':item)
 -- c':"hello" would give you chello
 
 addElementsInArray = zipWith (+)
+
+
+addMultiplyAndSubstract list1 list2 = map (\f -> zipWith f list1 list2) [(+), (*), (-)]
+-- below example of what to run ghci
+-- addMultiplyAndSubstract [1..6] [1..6]
+-- [[2,4,6,8,10,12],[1,4,9,16,25,36],[0,0,0,0,0,0]]
