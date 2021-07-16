@@ -1,5 +1,7 @@
 module Main where
 import Data.Char
+import Data.List
+
 
 main :: IO ()
 main = do
@@ -48,3 +50,6 @@ smallestNaturalNumberThatIsUnicode p = applyUntil p (\num -> num + 1) 1
 dividedByThree = (/3)
 -- brewlo example of what to run on ghci
 --dividedByThree 3
+
+minima index list = take index (sort list)
+
