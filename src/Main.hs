@@ -41,5 +41,10 @@ greatestOddDivisor = applyUntil(\num -> mod num 2 == 1) (\num -> div num 2)
 smallestNaturalNumberThatIsUnicode p = applyUntil p (\num -> num + 1) 1
 -- below example of what to run ghci
 -- smallestNaturalNumberThatIsUnicode (\num -> isLetter(chr num))
+-- applyUntil (> 1000) (*2) 1
 
 
+
+dividedByThree = (/3)
+-- brewlo example of what to run on ghci
+--dividedByThree 3
