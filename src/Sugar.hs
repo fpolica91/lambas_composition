@@ -45,9 +45,7 @@ numberOfsolutions p q = let
 
 
 
-solveQuadraticWhereClause p q = (p' - d, 'p + d)
-     where p' = -p / 2 
-           d  = sqrt(p'^2 - q)
-
-
+solveQuadraticWhere p q = (p' - d, p' + d)
+    where p' = - p / 2
+          d  = sqrt (p'^2 - q)
            
