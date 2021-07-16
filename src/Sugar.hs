@@ -49,3 +49,19 @@ solveQuadraticWhere p q = (p' - d, p' + d)
     where p' = - p / 2
           d  = sqrt (p'^2 - q)
            
+
+
+-- Defining helper functions with where
+-- below an example of fibonacci optimized with helper function
+fibonacciHelper smaller larger 0 = larger
+fibonacciHelper smaller larger steps = fibonacciHelper larger (smaller + larger) (steps - 1)
+
+fibonacci 0 = 0
+fibonacci n = fibonacciHelper 0 1 (n - 1)
+
+-- here we will define the helper in the where clause
+
+fibonacciWhere n = fibHelper 0 1 (n - 1)
+      where fibHelper :: Int -> Int -> Int -> Int
+            fibHelper smaller larger 0 = larger
+            fibHelper smaller larger steps = fibHelper larger (smaller + larger) (steps - 1)
